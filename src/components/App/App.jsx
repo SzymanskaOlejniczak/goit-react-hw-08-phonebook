@@ -1,32 +1,42 @@
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchContacts } from 'redux/operations';
-import { ContactForm } from '../ContactForm/ContactForm';
-import { Filter } from '../Filter/Filter';
-import {getIsLoadingStatus, getErrorStatus } from "redux/selectors"
-import { ContactList } from '../ContactList/ContactList';
+import { useEffect, lazy, Suspense } from 'react';
+import { useDispatch } from 'react-redux';
+import { Route, Routes } from 'react-router-dom';
+import { getCurrentUser } from 'redux/auth/operations';
+import { Loader } from 'components/Loader/Loader';
+import { AppBar } from '../AppBar/AppBar';
+import { PrivateRoute } from '../PrivateRoute';
+import { PublicRoute } from '../PublicRoute';
 import style from './App.module.css';
 
-export const App=()=> {
-  const isLoading = useSelector(getIsLoadingStatus);
-  const error = useSelector(getErrorStatus);
+const Contacts = lazy(() => import('pages/AddContact/AddContact'));
+const LogIn = lazy(() => import('pages/Login/Login'));
+const Register = lazy(() => import('pages/Register/Register'));
+const Home = lazy(() => import('pages/Home/Home'));
+const FilterContact = lazy(() => import('pages/FilterContact/FilterContact'));
+
+export const App = () => {
   const dispatch = useDispatch();
-  
+
   useEffect(() => {
-    dispatch(fetchContacts());
+    dispatch(getCurrentUser());
   }, [dispatch]);
 
-    return (
-      <div className={style.form}>
-        <h1>Phonebook</h1>
-        <ContactForm  />
-        <h2>Contacts</h2>
-        <Filter  />
-        {isLoading && !error ? <p>Loading...</p> : <ContactList />}
-      
-      </div>
-    );
-  }
-
-
-
+  return (
+    <div className={style.form}>
+      <AppBar />
+      <Suspense fallback={<Loader />}>
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route element={<PrivateRoute />}>
+            <Route element={<FilterContact />} path="/filtercontact" />
+            <Route element={<Contacts />} path="/addcontact" />
+          </Route>
+          <Route element={<PublicRoute />}>
+            <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<LogIn />} />
+          </Route>
+        </Routes>
+      </Suspense>
+    </div>
+  );
+};
