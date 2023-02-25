@@ -1,37 +1,50 @@
-import { getContacts } from 'redux/contacts/selectors';
-import { fetchContacts } from '../../redux/contacts/operations';
-import { useDispatch, useSelector } from 'react-redux';
+import { contactsSelectors } from 'redux/contacts';
+import { useState } from 'react';
+import { useSelector } from 'react-redux';
 import { FcContacts } from 'react-icons/fc';
 import style from './ContactForm.module.css';
 
-export const ContactForm = () => {
-  const contacts = useSelector(getContacts);
-  const dispatch = useDispatch();
+export const ContactForm = ({ showAlert, dispatchSaveContact }) => {
+  const [name, setName] = useState('');
+  const [number, setNumber] = useState('');
+  const contacts = useSelector(contactsSelectors.getContacts);
+
+  const saveContact = () => {
+    if (
+      contacts.find(
+        contact => contact.name === name || contact.number === number
+      )
+    ) {
+      showAlert(name);
+      return;
+    }
+
+    dispatchSaveContact(name, number);
+  };
+  
+  const handelInputChange = event => {
+    const { name, value } = event.target;
+    switch (name) {
+      case 'name':
+        setName(value);
+        break;
+      case 'phone':
+        setNumber(value);
+        break;
+      default:
+        return;
+    }
+  };
 
   const handleSubmit = e => {
     e.preventDefault();
-    let nameOntheList = false;
-    const form = e.target;
-    const name = form.name.value;
-    const number = form.number.value;
-    const toLowerCase = name.toLowerCase();
+    saveContact({ name, number });
+    reset();
+  };
 
-    const newContact = {
-      name: name,
-      number: number,
-    };
-
-    contacts.forEach(({ name }) => {
-      if (name.toLowerCase() === toLowerCase) {
-        alert(`${name} is already in contacts`);
-        nameOntheList = true;
-      }
-    });
-
-    if (nameOntheList) return;
-
-    dispatch(fetchContacts(newContact));
-    form.reset();
+  const reset = () => {
+    setName('');
+    setNumber('');
   };
 
   return (
@@ -42,6 +55,8 @@ export const ContactForm = () => {
           className={style.input}
           type="text"
           name="name"
+          value={name}
+          onChange={handelInputChange}
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
           title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           placeholder="name"
@@ -52,9 +67,11 @@ export const ContactForm = () => {
         Number
         <input
           className={style.input}
-          autoComplete="off"
+          autoComplete="on"
           type="tel"
-          name="number"
+          name="phone"
+          value={number}
+          onChange={handelInputChange}
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           placeholder="number"
