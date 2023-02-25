@@ -14,7 +14,6 @@ export default function Register() {
   const [isPasswordEmpty, setIsPasswordEmpty] = useState(false);
   const [isPasswordValid, setIsPasswordValid] = useState(true);
   const [errorMessage, setErrorMessage] = useState('');
-
   const isError = useSelector(authSelectors.getIsAuthError);
 
   useEffect(() => {
