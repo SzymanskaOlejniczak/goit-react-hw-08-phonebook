@@ -4,7 +4,7 @@
     background-position: center;
     max-width: 1440px;
     height: 600px;
-    padding-top: 200px;
+    padding-top: 50px;
     padding-bottom: 200px;
     display: flex;
     align-items: center;
@@ -12,7 +12,7 @@
   }
   
   .title {
-    font-size: 100px;
+    font-size: 80px;
     color: #023c02;
     font-weight: 700;
     margin-right: 10vw;
@@ -37,7 +37,7 @@
     font-weight: 700;
     line-height: 1.36;
     letter-spacing: 0.1em;
-  
+  margin-top: 100px;
     margin-bottom: 40px;
     width: 320px;
     color: #023c02;
