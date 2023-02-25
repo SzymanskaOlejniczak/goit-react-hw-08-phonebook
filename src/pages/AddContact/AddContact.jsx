@@ -1,5 +1,5 @@
 import s from './AddContact.module.css';
-import  {ContactForm } from '../../components/ContactForm/ContactForm';
+import { ContactForm } from '../../components/ContactForm/ContactForm';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { contactsOperations } from 'redux/contacts';
