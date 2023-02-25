@@ -11,8 +11,8 @@ export const Filter = () => {
     dispatch(changeFilter(value));
   };
   return (
-    <label className={style.label}  htmlFor={loginInputId}>
-      Find contacts by name
+    <label className={style.label} htmlFor={loginInputId}>
+      Find contacts by name:
       <input
         className={style.input}
         type="text"
