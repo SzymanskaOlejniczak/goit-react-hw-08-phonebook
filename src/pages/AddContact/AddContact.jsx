@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { contactsOperations } from 'redux/contacts';
 import { NavLink } from 'react-router-dom';
+import { ContactList } from 'components/ContactList/ContactList';
 
 export default function AddContact() {
   const [message, setMessage] = useState(false);
@@ -39,6 +40,7 @@ export default function AddContact() {
             showAlert={showAlert}
             dispatchSaveContact={saveContact}
           />
+          <ContactList/>
         </div>
       </div>
     </>
