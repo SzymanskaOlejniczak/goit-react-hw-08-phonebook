@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { logIn } from 'redux/auth/operations';
 import s from './Login.module.css';
-import {authSelectors} from 'redux/auth/selector';
+import { authSelectors } from 'redux/auth/selector';
 
 export default function Login() {
   const dispatch = useDispatch();
