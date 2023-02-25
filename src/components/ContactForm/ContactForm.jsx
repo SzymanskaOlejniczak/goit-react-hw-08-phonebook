@@ -21,7 +21,7 @@ export const ContactForm = ({ showAlert, dispatchSaveContact }) => {
 
     dispatchSaveContact(name, number);
   };
-  
+
   const handelInputChange = event => {
     const { name, value } = event.target;
     switch (name) {
