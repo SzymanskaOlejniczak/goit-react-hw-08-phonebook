@@ -4,7 +4,7 @@ import { fetchContacts, deleteContact, saveContact } from './operations';
 
 const items = [];
 
-export const itemsReducer = createReducer(items, {
+export const contactReducer = createReducer(items, {
   [fetchContacts.fulfilled]: (_, { payload }) => {
     return payload;
   },
