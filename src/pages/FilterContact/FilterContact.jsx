@@ -1,6 +1,6 @@
-import {ContactList} from 'components/ContactList/ContactList';
+import { ContactList } from 'components/ContactList/ContactList';
 import { Loader } from 'components/Loader/Loader';
-import { Filter} from 'components/Filter/Filter';
+import { Filter } from 'components/Filter/Filter';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { contactsOperations, contactsSelectors } from 'redux/contacts/index';
@@ -35,17 +35,7 @@ export default function FilterContact() {
         <div className={s.wrapper}>
           {contacts.length !== 0 ? <ContactList /> : ''}
         </div>
-        {isLoading && (
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}
-          >
-            <Loader />
-          </div>
-        )}
+        {isLoading && <Loader />}
       </div>
     </div>
   );
