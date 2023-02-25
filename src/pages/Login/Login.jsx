@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { logIn } from 'redux/auth/operations';
 import s from './Login.module.css';
 import { authSelectors } from 'redux/auth/selector';
+import login1 from '../../images/login1.png'
 
 export default function Login() {
   const dispatch = useDispatch();
@@ -54,8 +55,9 @@ export default function Login() {
     <>
       <div className={s.formPage}>
         <div>
-          <h1 className={s.title}>Log in</h1>
+         
           <div className={s.massage}>
+          <img src={login1} width={300} height={300}/>
             {isEmailEmpty && <p>Enter your email</p>}
             {isPasswordEmpty && <p>Enter your password</p>}
             {isError && errorMessage && <p> {errorMessage}</p>}
