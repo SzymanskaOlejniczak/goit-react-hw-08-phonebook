@@ -1,7 +1,7 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 
 import {
-  itemsReducer,
+  contactReducer,
   filterReducer,
   loadingReducer,
   errorReducer,
@@ -17,7 +17,7 @@ const persistConfig = {
 };
 
 const contactsReducer = combineReducers({
-  items: itemsReducer,
+  items: contactReducer,
   filter: filterReducer,
   loading: loadingReducer,
   error: errorReducer,
