@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import s from './Navigation.module.css';
-import phonebook from '../../images/phonebook.jpg';
+import book from '../../images/book.png';
 
 export const styleLink = {
   display: 'inline-block',
@@ -20,11 +20,11 @@ export const activeStyleLink = {
   fontSize: 30,
 };
 export const Navigation = () => {
-  const logo = phonebook;
+  const logo = book;
   return (
     <nav className={s.nav}>
       <NavLink to="/">
-        <img src={logo} alt="logo" width="60" />
+        <img src={logo} alt="logo" width="50" />
       </NavLink>
 
       <NavLink
