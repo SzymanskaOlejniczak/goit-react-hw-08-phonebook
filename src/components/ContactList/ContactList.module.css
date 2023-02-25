@@ -23,7 +23,7 @@
   
   .btn:hover,
   .btn:focus {
-    color: aliceblue;
+    color: rgb(138, 191, 237);
     background-color: rgb(90, 134, 231);
   }
   
