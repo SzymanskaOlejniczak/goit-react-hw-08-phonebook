@@ -74,7 +74,7 @@ export default function Register() {
     <>
       <div className={s.formPage}>
         <div>
-          <h1 className={s.title}>Sing up</h1>
+          <h1 className={s.title}>Sign up</h1>
           <div className={s.massage}>
             {isNameEmpty && <p>Enter your name</p>}
             {isEmailEmpty && <p>Enter your email</p>}
@@ -122,7 +122,7 @@ export default function Register() {
           </label>
 
           <button className={s.button} type="submit">
-            Sing up
+            Sign up
           </button>
         </form>
       </div>
