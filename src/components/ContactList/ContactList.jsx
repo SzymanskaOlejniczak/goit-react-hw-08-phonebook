@@ -1,10 +1,6 @@
 import { deleteContact } from '../../redux/contacts/operations';
 import { useSelector, useDispatch } from 'react-redux';
-import {
-  getFilter,
-  getContacts,
-  getError,
-} from 'redux/contacts/selectors';
+import { getFilter, getContacts, getError } from 'redux/contacts/selectors';
 import { FcEmptyTrash } from 'react-icons/fc';
 import style from './ContactList.module.css';
 
@@ -19,7 +15,7 @@ export const ContactList = () => {
       contact.name.toLowerCase().includes(filter.toLowerCase()) ||
       contact.number.replace(/-|\s/g, '').includes(filter.replace(/-|\s/g, ''))
   );
-  const deleteContacts = (data) => {
+  const deleteContacts = data => {
     dispatch(deleteContact(data));
   };
 
