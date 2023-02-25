@@ -4,8 +4,8 @@ import { Route, Routes } from 'react-router-dom';
 import { getCurrentUser } from 'redux/auth/operations';
 import { Loader } from 'components/Loader/Loader';
 import { AppBar } from '../AppBar/AppBar';
-import { PrivateRoute } from '../PrivateRoute';
-import { PublicRoute } from '../PublicRoute';
+import { PrivateRoute } from '../Routes/PrivateRoute';
+import { PublicRoute } from '../Routes/PublicRoute';
 import s from './App.module.css';
 
 const Contacts = lazy(() => import('pages/AddContact/AddContact'));
