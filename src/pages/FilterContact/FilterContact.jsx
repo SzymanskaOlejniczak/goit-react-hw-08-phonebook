@@ -24,7 +24,7 @@ export default function FilterContact() {
         <button className={s.button}>
           <NavLink to="/addcontact">Add Contact</NavLink>
         </button>
-        <h1 className={s.title}>View Contact</h1>
+        <h1 className={s.title}>Filter Contact</h1>
         <div className={s.massage}>
           {contacts.length === 0 && <p>No contacts saved yet</p>}
           {isError && <p>{isError.message}</p>}
