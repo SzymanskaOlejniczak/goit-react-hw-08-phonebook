@@ -1,8 +1,8 @@
 import { useSelector } from 'react-redux';
 import { Navigation } from '../Navigation/Navigation';
-import {UserMenu} from '../UserMenu/UserMenu';
-import {AuthNav} from '../AuthNav/AuthNav';
-import {authSelectors} from '../../redux/auth/selector';
+import { UserMenu } from '../UserMenu/UserMenu';
+import { AuthNav } from '../AuthNav/AuthNav';
+import { authSelectors } from '../../redux/auth/selector';
 import s from './AppBar.module.css';
 
 export function AppBar() {
