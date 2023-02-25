@@ -22,7 +22,7 @@ export const App = () => {
   }, [dispatch]);
 
   return (
-    <div className={s.form} >
+    <div className={s.form}>
       <AppBar />
       <Suspense fallback={<Loader />}>
         <Routes>
