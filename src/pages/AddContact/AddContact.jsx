@@ -29,7 +29,7 @@ export default function AddContact() {
       <div className={s.formPage}>
         <div>
           <button className={s.button}>
-            <NavLink to="/viewcontact">View Contact</NavLink>
+            <NavLink to="/filtercontact">Filter Contact</NavLink>
           </button>
           <h1 className={s.title}>Add Contact</h1>
           <div className={s.massage}>{message && <p>{message}</p>}</div>
