@@ -1,10 +1,6 @@
 import { createReducer } from '@reduxjs/toolkit';
 import { changeFilter } from './actions';
-import {
-  fetchContacts,
-  deleteContact,
-  saveContact,
-} from './operations';
+import { fetchContacts, deleteContact, saveContact } from './operations';
 
 const items = [];
 
