@@ -1,11 +1,9 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 
-import {
-  contactReducer,
-  filterReducer,
-  loadingReducer,
-  errorReducer,
-} from './contacts/reducers';
+import { contactReducer } from './contacts/reducers/contacts';
+import { filterReducer } from './contacts/reducers/filter';
+import { loadingReducer } from './contacts/reducers/loading';
+import { errorReducer } from './contacts/reducers/error';
 import { dataAuthReducer, errorAuthReducer } from './auth/reducer';
 import storage from 'redux-persist/lib/storage';
 import { persistStore, persistReducer } from 'redux-persist';
