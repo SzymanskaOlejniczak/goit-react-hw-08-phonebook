@@ -57,7 +57,7 @@ export default function Login() {
         <div>
          
           <div className={s.massage}>
-          <img src={login1} width={300} height={300}/>
+          <img src={login1} width={100} height={100}/>
             {isEmailEmpty && <p>Enter your email</p>}
             {isPasswordEmpty && <p>Enter your password</p>}
             {isError && errorMessage && <p> {errorMessage}</p>}
