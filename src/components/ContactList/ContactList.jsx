@@ -19,7 +19,7 @@ export const ContactList = () => {
       contact.name.toLowerCase().includes(filter.toLowerCase()) ||
       contact.number.replace(/-|\s/g, '').includes(filter.replace(/-|\s/g, ''))
   );
-  const deleteContacts = data => {
+  const deleteContacts = (data) => {
     dispatch(deleteContact(data));
   };
 
