@@ -4,8 +4,8 @@ export const getUsername = state => state.auth.data.user.name;
 export const getIsAuthError = state => state.auth.error;
 
 export const authSelectors = {
-    getIsLoggedIn,
-    getUsername,
-    getUseremail,
-    getIsAuthError,
-  };
+  getIsLoggedIn,
+  getUsername,
+  getUseremail,
+  getIsAuthError,
+};
