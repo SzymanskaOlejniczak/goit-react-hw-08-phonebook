@@ -6,7 +6,7 @@ import { Loader } from 'components/Loader/Loader';
 import { AppBar } from '../AppBar/AppBar';
 import { PrivateRoute } from '../PrivateRoute';
 import { PublicRoute } from '../PublicRoute';
-import style from './App.module.css';
+//import s from './App.module.css';
 
 const Contacts = lazy(() => import('pages/AddContact/AddContact'));
 const LogIn = lazy(() => import('pages/Login/Login'));
@@ -22,7 +22,7 @@ export const App = () => {
   }, [dispatch]);
 
   return (
-    <div className={style.form}>
+    <div >
       <AppBar />
       <Suspense fallback={<Loader />}>
         <Routes>
