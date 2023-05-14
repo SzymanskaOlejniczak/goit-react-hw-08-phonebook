@@ -53,14 +53,14 @@ export default function Login() {
   return (
     <>
       <div className={s.formPage}>
-        <div>
+        <div className={s.container}>
           <h1 className={s.title}>Log in</h1>
           <div className={s.massage}>
             {isEmailEmpty && <p>Enter your email</p>}
             {isPasswordEmpty && <p>Enter your password</p>}
             {isError && errorMessage && <p> {errorMessage}</p>}
           </div>
-        </div>
+        
 
         <form className={s.form} onSubmit={handleSubmit} autoComplete="on">
           <label className={s.label}>
@@ -89,6 +89,7 @@ export default function Login() {
             Sign in
           </button>
         </form>
+      </div>
       </div>
     </>
   );
