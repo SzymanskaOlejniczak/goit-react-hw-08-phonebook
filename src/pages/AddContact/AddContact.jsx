@@ -28,7 +28,7 @@ export default function AddContact() {
   return (
     <>
       <div className={s.formPage}>
-        <div>
+        <div className={s.container}>
           <button className={s.button}>
             <NavLink to="/filtercontact">Filter Contact</NavLink>
           </button>
