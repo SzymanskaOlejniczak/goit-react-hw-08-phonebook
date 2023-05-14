@@ -4,15 +4,19 @@
     background-position: center;
     max-width: 1440px;
     height: 600px;
-    padding-top: 50px;
     padding-bottom: 200px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
   }
-  
+  .container {
+    display:block;
+    position: absolute;
+ margin-top:-200px
+
+  }
   .title {
-    font-size: 80px;
+    font-size: 60px;
     color: #023c02;
     font-weight: 700;
     margin-right: 10vw;
@@ -69,9 +73,9 @@
   }
   
   .button {
-    width: 320px;
+    width: 200px;
     height: 80px;
-    font-size: 40px;
+    font-size: 30px;
     font-weight: 700;
     display: flex;
     align-items: center;
@@ -95,7 +99,7 @@
   
   .massage {
     color: rgb(7, 180, 65);
-    font-size: 40px;
+    font-size: 20px;
     line-height: 1.17;
     letter-spacing: 0.05em;
     min-height: 100px;
