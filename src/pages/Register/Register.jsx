@@ -73,7 +73,7 @@ export default function Register() {
   return (
     <>
       <div className={s.formPage}>
-        <div>
+     <div className={s.container}>
           <h1 className={s.title}>Sign up</h1>
           <div className={s.massage}>
             {isNameEmpty && <p>Enter your name</p>}
@@ -84,7 +84,7 @@ export default function Register() {
             )}
             {isError && errorMessage !== '' && <p>{errorMessage}</p>}
           </div>
-        </div>
+      
 
         <form className={s.form} onSubmit={handleSubmit} autoComplete="on">
           <p className={s.formText}> Registration details</p>
@@ -125,6 +125,7 @@ export default function Register() {
             Sign up
           </button>
         </form>
+        </div>
       </div>
     </>
   );
