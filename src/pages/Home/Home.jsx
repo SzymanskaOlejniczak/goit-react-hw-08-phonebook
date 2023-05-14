@@ -24,8 +24,8 @@ export default function Home() {
         <img
           src={phonebook}
           alt=""
-          min-width={330}
-          height={300}
+          width={330}
+          height={220}
           className={s.hero}
         />
       </section>
